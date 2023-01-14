@@ -1,11 +1,14 @@
+#!/usr/bin/env python3
+
 from pathlib import Path
 
 from poetry.core.factory import Factory
 from poetry.core.masonry.builders.sdist import SdistBuilder
 
 
-def build_setup_py():
-    return SdistBuilder(Factory().create_poetry(Path(".").resolve())).build_setup()
+
+def build_setup_py(path = "."):
+    return SdistBuilder(Factory().create_poetry(Path(path).resolve())).build_setup()
 
 
 def main():
